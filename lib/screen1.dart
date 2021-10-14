@@ -90,11 +90,14 @@ class _MyHomePageState extends State<MyHomePage> {
                           'Forget password?',
                         ),
                       ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
                       OutlinedButton(
                         onPressed: () {},
-                        child: const Text(
-                          'Log-in',
-                        ),
+                        child: const Text('Log-in'),
                       ),
                     ],
                   ),
