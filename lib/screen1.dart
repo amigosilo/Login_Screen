@@ -38,11 +38,11 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Stack(
           children: <Widget>[
-            Image.asset('assets/images/bg.png'),
+            Image.asset('assets/images/bg.png'), // Background
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                OutlinedButton(
+                OutlinedButton( // Button to switch to Screen 2
                   onPressed: (){
                     Navigator.push(
                       context,
@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     'Screen 2'
                   ),
                 ),
-                OutlinedButton(
+                OutlinedButton( // Button to switch to Screen 3
                   onPressed: (){
                     Navigator.push(
                       context,
