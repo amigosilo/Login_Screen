@@ -111,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           );
                         },
-                        child: const Text('Sign up'),
+                        child: Text('Sign-up'),
                       ),
                     ],
                   )
