@@ -66,30 +66,25 @@ class _Screen2State extends State<Screen2> {
                     ),
                     obscureText: true,
                   ),
-                  Row( // Row for buttons
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      OutlinedButton( // Button to cancel sign-up and return to Screen 1
-                        onPressed: (){
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (BuildContext context) => const MyHomePage(title: 'Screen 1'),
-                            ),
-                          );
-                        },
-                        child: const Text(
-                          'Cancel',
+                  OutlinedButton( // Button to sign-up (function not implemented)
+                    onPressed: (){}, // Placeholder function
+                    child: const Text(
+                      'Sign-up',
+                    ),
+                  ),
+                  TextButton( // Button to cancel sign-up and return to Screen 1
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => const MyHomePage(title: 'Screen 1'),
                         ),
-                      ),
-                      OutlinedButton( // Button to sign-up (function not implemented)
-                        onPressed: (){}, // Placeholder function
-                        child: const Text(
-                          'Sign-up',
-                        ),
-                      ),
-                    ],
-                  )
+                      );
+                    },
+                    child: const Text(
+                      'Back to Login',
+                    ),
+                  ),
                 ],
               ),
             ),
