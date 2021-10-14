@@ -60,9 +60,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   const Text(
-                    'Email',
-                  ),
-                  const Text(
                     'Password',
                   ),
                   const TextField(
@@ -74,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Row(
                     // Row for buttons
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextButton(
                         onPressed: () {
