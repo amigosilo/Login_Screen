@@ -29,6 +29,7 @@ class _Screen2State extends State<Screen2> {
               SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     const SizedBox( // Space for formatting
                       height: 300 ,

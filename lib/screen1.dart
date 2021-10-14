@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'screen2.dart';
 import 'screen3.dart';
@@ -42,6 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
             SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   const SizedBox(
                     // Space for formatting
@@ -49,14 +51,25 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   const Text(
                     'Log-in',
-                  ),
+                    style: TextStyle(
+                      fontSize:40.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Times New Roman'
+                    ),
+                    ),
+
                   const Text(
                     'E-mail',
+                      style: TextStyle(
+                          fontSize:20.0,
+                          fontWeight: FontWeight.bold,
+                      )
                   ),
                   const TextField(
                     // Input field for name
                     decoration: InputDecoration(
                       hintText: 'Enter your e-mail address',
+                      
                     ),
                   ),
                   const Text(
