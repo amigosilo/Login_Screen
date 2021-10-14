@@ -49,9 +49,18 @@ class _Screen2State extends State<Screen2> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        IconButton( // Button for adding profile picture (function not implemented)
-                          onPressed: (){}, // Placeholder function
-                          icon: Image.asset('assets/images/cam.png'),
+                        CircleAvatar(
+                          radius: 50,
+                          backgroundColor: Colors.black12,
+                          child: IconButton( // Button for adding profile picture (function not implemented)
+                            color: Colors.grey,
+                            onPressed: (){}, // Placeholder function
+
+                            icon: const Icon(
+                              Icons.camera_alt,
+                              color: Colors.black,
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -121,13 +130,12 @@ class _Screen2State extends State<Screen2> {
                           height: 50.0,
                           width: 300,
                           child: RaisedButton( // Button to sign-up (function not implemented)
-                            onPressed: (){}, // Placehold
+                            onPressed: (){}, // Placeholder function
 
                             shape: RoundedRectangleBorder(
 
                                 borderRadius: BorderRadius.circular(80.0)
                             ),
-// er function
                             child: const Text(
                               'Sign-up',
                               style: TextStyle(
