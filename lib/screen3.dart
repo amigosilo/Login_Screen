@@ -25,7 +25,7 @@ class _Screen3State extends State<Screen3> {
               padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: [
-                  SizedBox(height: 250),
+                  const SizedBox(height: 300),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: const [

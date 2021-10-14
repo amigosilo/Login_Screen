@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     // Row for buttons
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      OutlinedButton(
+                      TextButton(
                         onPressed: () {
                           Navigator.push(
                             context,
