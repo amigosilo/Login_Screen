@@ -16,17 +16,17 @@ class _Screen2State extends State<Screen2> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Center(
-          child: Stack(
-            fit: StackFit.expand,
-            children: <Widget>[
-              Image.asset(
-                'assets/images/bg.png',
-                fit: BoxFit.fill,
-              ),
-              SingleChildScrollView(
+      body: Center(
+        child: Stack(
+          fit: StackFit.expand,
+          children: <Widget>[
+            Image.asset(
+              'assets/images/bg.png',
+              fit: BoxFit.fill,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,14 +36,37 @@ class _Screen2State extends State<Screen2> {
                     ),
                     const Text(
                       'Sign-up',
+                      style: TextStyle(
+                          fontSize:40.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Times New Roman'
+                      ),
                     ),
-                    IconButton( // Button for adding profile picture (function not implemented)
-                      onPressed: (){}, // Placeholder function
-                      icon: Image.asset('assets/images/cam.png'),
+                    Container(
+                        width: 20,
+                        height:20
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        IconButton( // Button for adding profile picture (function not implemented)
+                          onPressed: (){}, // Placeholder function
+                          icon: Image.asset('assets/images/cam.png'),
+                        ),
+                      ],
+                    ),
+                    Container(
+                        width: 20,
+                        height:20
                     ),
                     const Text(
                       'Name',
+                        style: TextStyle(
+                          fontSize:20.0,
+                          fontWeight: FontWeight.bold,
+                        )
                     ),
+
                     const TextField( // Input field for name
                       decoration: InputDecoration(
                         hintText: 'Your Name',
@@ -51,6 +74,10 @@ class _Screen2State extends State<Screen2> {
                     ),
                     const Text(
                       'Email',
+                        style: TextStyle(
+                          fontSize:20.0,
+                          fontWeight: FontWeight.bold,
+                        )
                     ),
                     const TextField( // Input field for email
                       decoration: InputDecoration(
@@ -59,6 +86,10 @@ class _Screen2State extends State<Screen2> {
                     ),
                     const Text(
                       'Contact No.',
+                        style: TextStyle(
+                          fontSize:20.0,
+                          fontWeight: FontWeight.bold,
+                        )
                     ),
                     const TextField( // Input field for contact number
                       decoration: InputDecoration(
@@ -67,29 +98,50 @@ class _Screen2State extends State<Screen2> {
                     ),
                     const Text(
                       'Password',
+                        style: TextStyle(
+                          fontSize:20.0,
+                          fontWeight: FontWeight.bold,
+                        )
                     ),
+                    const TextField( // Input field for password
+                      decoration: InputDecoration(
+                        hintText: 'Password',
+                      ),
+                      obscureText: true,
+                    ),
+                    Container(
+                        width: 20,
+                        height:20
+                    ),
+
                     Row(
-                      children: const [
-                        SizedBox(
-                          width: 350,
-                          child: TextField( // Input field for password
-                            decoration: InputDecoration(
-                              hintText: 'Password',
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 50.0,
+                          width: 300,
+                          child: RaisedButton( // Button to sign-up (function not implemented)
+                            onPressed: (){}, // Placehold
+
+                            shape: RoundedRectangleBorder(
+
+                                borderRadius: BorderRadius.circular(80.0)
                             ),
-                            obscureText: true,
+// er function
+                            child: const Text(
+                              'Sign-up',
+                              style: TextStyle(
+                                fontSize: 25,
+                                color: Colors.white
+                              )
+
+                            ),
+                              color: Colors.black
+
+
                           ),
                         ),
-                        Icon(
-                          Icons.remove_red_eye,
-                          color: Colors.black12,
-                        ),
                       ],
-                    ),
-                    OutlinedButton( // Button to sign-up (function not implemented)
-                      onPressed: (){}, // Placeholder function
-                      child: const Text(
-                        'Sign-up',
-                      ),
                     ),
                     TextButton( // Button to cancel sign-up and return to Screen 1
                       onPressed: (){
@@ -102,13 +154,17 @@ class _Screen2State extends State<Screen2> {
                       },
                       child: const Text(
                         'Back to Login',
+                          style: TextStyle(
+                            color: Colors.black
+
+                          )
                       ),
                     ),
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
