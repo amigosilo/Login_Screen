@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:login_screen/screen1.dart';
 
@@ -15,6 +16,7 @@ class _Screen3State extends State<Screen3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Center(
         child: Stack(
           children: <Widget>[
@@ -26,7 +28,7 @@ class _Screen3State extends State<Screen3> {
                   SizedBox(height: 250),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
+                    children: const [
                       Text(
                         "Forgot Password",
                         style: TextStyle(
@@ -38,10 +40,10 @@ class _Screen3State extends State<Screen3> {
                     ],
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 25, top: 25),
+                    margin: const EdgeInsets.only(left: 25, top: 25),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text(
                           "Email",
                           style: TextStyle(
@@ -51,10 +53,28 @@ class _Screen3State extends State<Screen3> {
                     ),
                   ),
                   TextFormField(
-                    decoration: InputDecoration(hintText: "Your Email id"),
+                    decoration: const InputDecoration(hintText: "Your Email id"),
                   ),
-                  OutlinedButton(onPressed: null, child: Text('Submit')),
-                  TextButton(onPressed: null, child: Text('Back to login')),
+                  OutlinedButton(
+                    onPressed:() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => const MyHomePage(title: 'Screen 1'),
+                        )
+                      );
+                    },
+                    child: const Text('Submit')),
+                  TextButton(
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => const MyHomePage(title: 'Screen 1',)
+                        )
+                      );
+                    },
+                    child: const Text('Back to login')),
                 ],
               ),
             )
