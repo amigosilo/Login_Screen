@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             context,
                             MaterialPageRoute(
                               builder: (BuildContext context) =>
-                                  const MyHomePage(title: 'Screen 3'),
+                                  const Screen3(title: 'Screen 3'),
                             ),
                           );
                         },
@@ -107,11 +107,11 @@ class _MyHomePageState extends State<MyHomePage> {
                             context,
                             MaterialPageRoute(
                               builder: (BuildContext context) =>
-                                  const MyHomePage(title: 'Screen2'),
+                                  const Screen2(title: 'Screen2'),
                             ),
                           );
                         },
-                        child: Text(''),
+                        child: Text('Sign-up'),
                       ),
                     ],
                   )
