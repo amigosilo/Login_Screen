@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'screen2.dart';
 import 'screen3.dart';
 
@@ -69,6 +70,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     // Input field for name
                     decoration: InputDecoration(
                       hintText: 'Enter your e-mail address',
+                        hintStyle: TextStyle(
+                            fontSize:40.0,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Times New Roman'
+                        ),
+
                       
                     ),
                   ),
