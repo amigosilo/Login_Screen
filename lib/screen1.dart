@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -5,7 +6,9 @@ import 'screen2.dart';
 import 'screen3.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -36,6 +39,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String _email = "";
   String _password = "";
+  final _auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,12 +70,13 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontWeight: FontWeight.bold,
                           fontFamily: 'Times New Roman'),
                     ),
-                    Container(width: 20, height: 20),
+                    const SizedBox(width: 20, height: 20),
                     const Text('E-mail',
                         style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
-                        )),
+                        )
+                    ),
                     TextField(
                       onChanged: (text) {
                         _email = text;
@@ -84,15 +89,19 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                     ),
-                    Container(width: 20, height: 20),
+                    const SizedBox(width: 20, height: 20),
                     const Text('Password',
                         style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
-                        )),
-                    const TextField(
+                        )
+                    ),
+                    TextField(
                       // Input field for password
-                      decoration: InputDecoration(
+                      onChanged: (text) {
+                        _password = text;
+                      },
+                      decoration: const InputDecoration(
                         hintText: 'Password',
                         hintStyle: TextStyle(
                           fontSize: 15.0,
@@ -118,26 +127,48 @@ class _MyHomePageState extends State<MyHomePage> {
                               style: TextStyle(
                                 fontSize: 17.0,
                                 color: Colors.black,
-                              )),
+                              )
+                          ),
                         ),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
+                        SizedBox(
                           height: 50.0,
                           width: 300,
                           child: RaisedButton(
-                              onPressed: () {},
+                            onPressed: () async {
+
+                                try {
+
+                                  final _newuser = await _auth.createUserWithEmailAndPassword(email:_email,password: _password);
+
+                                  if (_newuser!= null)
+                                  {
+                                    // Navigator.pushName(context, 'ShopScreen');
+                                    print("Success");
+                                  }
+
+                                }
+                                catch (e) {
+                                  print(e);
+                                }
+                            },
+
+
+
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(80.0)),
                               child: const Text('Log-in',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 25,
-                                  )),
-                              color: Colors.black),
+                                  )
+                              ),
+                              color: Colors.black,
+                          ),
                         ),
                       ],
                     ),
@@ -159,7 +190,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             style: ButtonStyle(
                               foregroundColor: MaterialStateProperty.all<Color>(
                                   Colors.black),
-                            )),
+                            )
+                        ),
                       ],
                     )
                   ],
