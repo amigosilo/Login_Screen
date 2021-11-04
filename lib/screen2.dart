@@ -42,7 +42,7 @@ class _Screen2State extends State<Screen2> {
                           fontFamily: 'Times New Roman'
                       ),
                     ),
-                    Container(
+                    const SizedBox(
                         width: 20,
                         height:20
                     ),
@@ -64,7 +64,7 @@ class _Screen2State extends State<Screen2> {
                         ),
                       ],
                     ),
-                    Container(
+                    const SizedBox(
                         width: 20,
                         height:20
                     ),
@@ -118,7 +118,7 @@ class _Screen2State extends State<Screen2> {
                       ),
                       obscureText: true,
                     ),
-                    Container(
+                    const SizedBox(
                         width: 20,
                         height:20
                     ),
@@ -126,7 +126,7 @@ class _Screen2State extends State<Screen2> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
+                        SizedBox(
                           height: 50.0,
                           width: 300,
                           child: RaisedButton( // Button to sign-up (function not implemented)
