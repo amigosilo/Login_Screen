@@ -1,3 +1,5 @@
+// ignore_for_file: sized_box_for_whitespace, deprecated_member_use
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:login_screen/screen1.dart';
@@ -12,7 +14,6 @@ class Screen3 extends StatefulWidget {
 }
 
 class _Screen3State extends State<Screen3> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,34 +57,30 @@ class _Screen3State extends State<Screen3> {
                       ],
                     ),
                   ),
-                  Container(
-                      width: 20,
-                      height:20
-                  ),
+                  Container(width: 20, height: 20),
                   TextFormField(
-                    decoration: const InputDecoration(hintText: "Your Email id"),
+                    decoration:
+                        const InputDecoration(hintText: "Your Email id"),
                   ),
-                  Container(
-                    width: 20,
-                    height:20
-                  ),
+                  Container(width: 20, height: 20),
                   Container(
                     height: 50.0,
                     width: 300,
                     child: RaisedButton(
                       color: Colors.black,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(80.0),
-                        ),
-                      onPressed:() {
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(80.0),
+                      ),
+                      onPressed: () {
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (BuildContext context) => const MyHomePage(title: 'Screen 1'),
-                          )
-                        );
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  const MyHomePage(title: 'Screen 1'),
+                            ));
                       },
-                      child: const Text('Submit',
+                      child: const Text(
+                        'Submit',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 25,
@@ -91,28 +88,22 @@ class _Screen3State extends State<Screen3> {
                       ),
                     ),
                   ),
-                  Container(
-                      width: 20,
-                      height:20
-                  ),
-
-
+                  Container(width: 20, height: 20),
                   TextButton(
                     style: ButtonStyle(
-
-                      foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.black),
                     ),
-                    onPressed: (){
+                    onPressed: () {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => const MyHomePage(title: 'Screen 1',)
-                        )
-                      );
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  const MyHomePage(
+                                    title: 'Screen 1',
+                                  )));
                     },
-                    child: const Text(
-                      'Back to login'
-                    ),
+                    child: const Text('Back to login'),
                   ),
                 ],
               ),
