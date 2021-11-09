@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:login_screen/screen1.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 class Screen2 extends StatefulWidget {
   const Screen2({Key? key, required this.title}) : super(key: key);
@@ -11,6 +14,12 @@ class Screen2 extends StatefulWidget {
 }
 
 class _Screen2State extends State<Screen2> {
+  String _name = "";
+  String _email = "";
+  String _contactNo = "";
+  String _password = "";
+  final _firestore = FirebaseFirestore.instance;
+  final _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -76,8 +85,11 @@ class _Screen2State extends State<Screen2> {
                         )
                     ),
 
-                    const TextField( // Input field for name
-                      decoration: InputDecoration(
+                    TextField( // Input field for name
+                      onChanged: (text) {
+                        _name = text;
+                      },
+                      decoration: const InputDecoration(
                         hintText: 'Your Name',
                       ),
                     ),
@@ -88,8 +100,11 @@ class _Screen2State extends State<Screen2> {
                           fontWeight: FontWeight.bold,
                         )
                     ),
-                    const TextField( // Input field for email
-                      decoration: InputDecoration(
+                    TextField( // Input field for email
+                      onChanged: (text) {
+                        _email = text;
+                      },
+                      decoration: const InputDecoration(
                         hintText: 'Your Email',
                       ),
                     ),
@@ -100,8 +115,11 @@ class _Screen2State extends State<Screen2> {
                           fontWeight: FontWeight.bold,
                         )
                     ),
-                    const TextField( // Input field for contact number
-                      decoration: InputDecoration(
+                    TextField( // Input field for contact number
+                      onChanged: (text) {
+                        _contactNo = text;
+                      },
+                      decoration: const InputDecoration(
                         hintText: 'Your Contact Number',
                       ),
                     ),
@@ -112,8 +130,11 @@ class _Screen2State extends State<Screen2> {
                           fontWeight: FontWeight.bold,
                         )
                     ),
-                    const TextField( // Input field for password
-                      decoration: InputDecoration(
+                    TextField( // Input field for password
+                      onChanged: (text) {
+                        _password = text;
+                      },
+                      decoration: const InputDecoration(
                         hintText: 'Password',
                       ),
                       obscureText: true,
@@ -129,8 +150,28 @@ class _Screen2State extends State<Screen2> {
                         SizedBox(
                           height: 50.0,
                           width: 300,
-                          child: RaisedButton( // Button to sign-up (function not implemented)
-                            onPressed: (){}, // Placeholder function
+                          child: RaisedButton( // Button to sign-up
+                            onPressed: () async {
+                              try {
+
+                                var newuser = await _auth.createUserWithEmailAndPassword(email: _email, password: _password);
+                                if (newuser != null) {
+                                  print('user has been created');
+                                  // _firestore.collection('Users').add({
+                                  //   'username': _name,
+                                  //   'email': _email,
+                                  //   'contactNo': _contactNo,
+                                  //   'password': _password,
+                                  // });
+                                  // Navigator.pushNamed(context, '/product_list');
+                                } else {
+                                  print('Unsuccessful');
+                                }
+                                
+                              } on Exception catch (e) {
+                                print(e);
+                              }
+                            },
 
                             shape: RoundedRectangleBorder(
 
