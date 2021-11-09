@@ -78,8 +78,6 @@ class _Screen2State extends State<Screen2> {
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
                         )),
-                    const TextField(
-                      // Input field for name
                     TextField( // Input field for name
                       onChanged: (text) {
                         _name = text;
@@ -93,7 +91,6 @@ class _Screen2State extends State<Screen2> {
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
                         )),
-                    const TextField(
                     TextField( // Input field for email
                       onChanged: (text) {
                         _email = text;
@@ -107,7 +104,6 @@ class _Screen2State extends State<Screen2> {
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
                         )),
-                    const TextField(
                     TextField( // Input field for contact number
                       onChanged: (text) {
                         _contactNo = text;
@@ -121,7 +117,6 @@ class _Screen2State extends State<Screen2> {
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
                         )),
-                    const TextField(
                     TextField( // Input field for password
                       onChanged: (text) {
                         _password = text;
