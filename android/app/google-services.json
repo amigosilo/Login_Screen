@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "425638867734",
-    "project_id": "tsahilgaan-baraa-9ac1f",
-    "storage_bucket": "tsahilgaan-baraa-9ac1f.appspot.com"
+    "project_number": "33317937944",
+    "project_id": "tsahilgaan-baraa-b3536",
+    "storage_bucket": "tsahilgaan-baraa-b3536.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:425638867734:android:b1732b6bcb1f6eb6d09637",
+        "mobilesdk_app_id": "1:33317937944:android:7591a67e1d5210c9cf746d",
         "android_client_info": {
           "package_name": "com.example.login_screen"
         }
       },
       "oauth_client": [
         {
-          "client_id": "425638867734-i70gtspegscsttd3ncvr0lch4u5v516b.apps.googleusercontent.com",
+          "client_id": "33317937944-jeigudjockjg6kupssqejg06uoiot55t.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAD_rtzj9Nd19xgmHDLc9bvE7CthZPCw6U"
+          "current_key": "AIzaSyDx_Llkbpa_Gj3tgLDzrr1GBar3w4cO7NE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "425638867734-i70gtspegscsttd3ncvr0lch4u5v516b.apps.googleusercontent.com",
+              "client_id": "33317937944-jeigudjockjg6kupssqejg06uoiot55t.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
